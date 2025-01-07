@@ -5,19 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style type="text/css">
-        .heading{display:flex;}
+        body{font-family:Arial, sans-serif; line-height:1.6; margin:0; padding:0; }
+        .heading{display:flex; flex-direction:row;}
         .heading .discription {padding-left:50px;}
+        .picture{max-width:100%; height: auto; border-radius:10px;}
+        hr{margin:20px 0;}
+        h1{text-align:center;}
+        @media (max-width: 768px) {
+            .heading {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .heading .discription {
+                padding-left: 0;
+                margin-top: 15px;
+            }
+            .picture {
+                width: 80%;
+                max-width: 300px;
+                margin:0 auto;
+            }
+            
+        }
     </style>
 </head>
 <body>
     <h1>ROUTE FINDER</h1>
     <div class="heading">
-    <img src="IMG_9149.JPG" width="200" align="left" class="picture">
+    <img src="IMG_9149.JPG" width="200" class="picture">
     <h2 class="discription">This robot recognizes the obstacle around through ultra sonic sensor.
         This helps the robot know whether there are obstacles around and prevent the clash. It can find a route to go through autonomously.
     </h2>
     </div>
     <hr/>
+    <div class="main">
     <h2>How it works</h2>
     <p>This is a robot that can go through maze. The route has only one way and this robot can go through the way without collapsing.
         This can be done by two radar sensors that is attatched at the side of the robot. The sensors are distinguished by the direction.
@@ -40,5 +62,6 @@
     <h2>Videos</h2>
     <a href="https://www.youtube.com/shorts/Jc4xdx_2r-w?si=x5sAIqAFF_Tx5mL4">video</a></br>
     <a href="https://youtube.com/shorts/BtnDL3jlhKk?si=c18cRNXYNDzlPkQz">video2</a>
+    </div>
 </body>
 </html>

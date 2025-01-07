@@ -4,47 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style type ="text/css">
-        .heading{display:flex; flex-direction:column; text-align:center;}
-        .heading .robotics{font-size:80px; border-style:ridge; margin-bottom:10px; background-color:cadetblue;}
-        .heading .welcome{font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-top:1px; color:blue;}
-        .routefinder {display:flex;}
-        .routefinder .dis1{display:flex; flex-direction:column; padding-left:50px;}
-        .routefinder .dis1 .title1{font-size:50px; margin-bottom:5px; background-color:cornflowerblue;}
-        .routefinder .dis1 .discription1{padding-top:100px; padding-top:5px;}
-        .scooter {display:flex; flex-direction:row-reverse;}
-        .scooter .dis2{display:flex; flex-direction:column; padding-left:50px;}
-        .scooter .dis2 .title2{font-size:50px; margin-bottom:5px; background-color:cornflowerblue;margin-right:50px;}
-        .scooter .dis2 .discription2{padding-top:100px; padding-top:5px;}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .heading {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .heading .robotics {
+            font-size: 5vw;  /* 화면 크기에 맞춰 자동 조정 */
+            border-style: ridge;
+            margin-bottom: 10px;
+            background-color: cadetblue;
+            border-radius:5px;
+        }
+        .heading .welcome {
+            font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
+            margin-top: 1px;
+            color: blue;
+        }
+        .routefinder, .scooter {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        .routefinder .dis1, .scooter .dis2 {
+            display: flex;
+            flex-direction: column;
+            padding-left: 20px;
+        }
+        .routefinder .title1, .scooter .title2 {
+            font-size: 3vw;  /* 반응형으로 글씨 크기 조정 */
+            margin-bottom: 10px;
+            background-color: cornflowerblue;
+        }
+        .discription1, .discription2 {
+            padding-top: 5px;
+            background-color:rgb(193, 177, 207);
+            border-radius:10px;
+        }
+        .scooter {
+            display:flex;
+            flex-direction:row-reverse;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 100px;
+        }
+        hr {
+            margin: 20px 0;
+        }
 
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .routefinder, .scooter {
+                flex-direction: column;
+                text-align: center;
+            }
+            .routefinder .dis1, .scooter .dis2 {
+                padding-left: 0;
+                margin-top: 15px;
+            }
+            .scooter .title2 {
+                margin-right: 0;
+            }
+            .routefinder img, .scooter img {
+                width: 90%;
+                max-width: 400px;
+            }
+            .heading .robotics {
+                font-size: 8vw;  /* 모바일에서 글씨 크기 커지게 */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="heading">
-    <h1 class="robotics">The ROBOTICS LAB</h1>
-    <h2 class="welcome">welcome to the robotics lab</h2>
+        <h1 class="robotics">The ROBOTICS LAB</h1>
+        <h2 class="welcome">Welcome to the Robotics Lab</h2>
     </div>
     <hr/>
-    </class>
+    
     <div class="routefinder">
-    <a href="route_finder.html"><img src ="IMG_9149.JPG" width="500" class="picture1"></a>
-    <div class="dis1">
-    <h3 class="title1">Route finder</h3>
-    <h3 class="discription1">This robot is made to find path by using ultra sonic sensor.<br/>
-    Three sensors can recognize obstacles that is hindering it from going forward.</h3>
-    </div>
-    </div>
-    <hr/>
-    <div class="scooter">
-        <a href="scooter.html"><img src="IMG_0267.jpg" width="500" class="picture2"></a>
-        <div class="dis2">
-            <h3 class="title2"> Scooter safety belt</h3>
-            <h3 class="discription2">This helps to improve the safety of scooter.<br/>
-            high level of center of mass is main reason why the scooter overturns in accidents.
-        The safety belt can help driver avoid overturn by pulling him backward before crash.</h3>
+        <a href="route_finder.html">
+            <img src="IMG_9149.JPG" class="picture1" alt="Route Finder Robot">
+        </a>
+        <div class="dis1">
+            <h3 class="title1">Route Finder</h3>
+            <h3 class="discription1">This robot is made to find paths by using ultrasonic sensors.<br/>
+            Three sensors can recognize obstacles that hinder it from moving forward.</h3>
         </div>
     </div>
-<hr/>
+    <hr/>
     
+    <div class="scooter">
+        <a href="scooter.html">
+            <img src="IMG_0267.jpg" class="picture2" alt="Scooter Safety Belt">
+        </a>
+        <div class="dis2">
+            <h3 class="title2">Scooter Safety Belt</h3>
+            <h3 class="discription2">This improves scooter safety.<br/>
+            A high center of mass is the main reason scooters overturn during accidents.<br/>
+            The safety belt can help the driver avoid overturning by pulling them backward before a crash.</h3>
+        </div>
+    </div>
+    <hr/>
 </body>
 </html>
