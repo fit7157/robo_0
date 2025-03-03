@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .robo{display:block; margin:0 auto; width:100px; margin-bottom:10px;}
+        .subtitle{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:40px; text-align:center;font-style:italic; color:black; background-color:white;}       
+        body{font-family:Arial, sans-serif; line-height:1.6; margin:0; padding:0; }
+        .heading{display:flex; flex-direction:row; align-items:center; justify-content:center ;gap:20px;}
+        .heading .discription { display:flex; align-items:center; text-align:center; max-width:50%;}
+        .picture{max-width:100%; height: auto; border-radius:10px; margin-left:50px; margin-bottom:10px;}
+        hr{margin:20px 0;}
+        h1{text-align:center; background-color:black; color:white;border-radius:10px;font-size:50px;}
+        h2{background-color:rgba(192, 138, 138, 0.808);color:white; border-radius:10px;}
+        .discription {color:black; background-color:white;}
+
+        @media (max-width: 768px) {
+            .heading {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .heading .discription {
+                max-width:90%;
+                margin-top: 15px;
+                margin-left: 0;
+            }
+            .picture {
+                width: 80%;
+                max-width: 300px;
+                margin:0 auto;
+            }
+            
+        }
+
+/*영상*/
+.video-container {
+    width: 90vw; /* 전체 너비의 90% */
+    max-width: 1200px; /* 최대 크기 제한 */
+    margin: 0 auto; /* 가운데 정렬 */
+}
+.video-container iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* 가로세로 비율 유지 */
+}
+
+    </style>
+</head>
+
+<body>
+    <a href="index.html"><img src="IMG_0003.png" width="50" class="robo" ></a>
+    <h1>ATOV</h1>
+    <h2 class="subtitle">Can we use both wheels and legs?</h2>
+    <div class="heading">
+    <img src="IMG_0004.jpg" width="200" class="picture">
+    <h2 class="discription">
+        This robot is basically moving on wheels. but it can also move by legs.</h2>
+    </div>
+    <hr/>
+    <div class="main">
+    <h2>How it works</h2>
+    <p> 
+        There are 2 legs and 3wheels with 2motors. Wheels are fast,stable easy to change moving directions. However it can't overcome obstacles.
+        Legs can overcome obstacles, but they are slow and unstable. Therefore lot's of companies are making robots that combine legs and wheels.
+        ATOV is one of them that combine wheel movement and leg movement. However unlike other robots, ATOV can choose whether to move by legs or wheels.<br/>
+        This enables the robot to efficiently move and maximize the stability. Three modes are possible, the wheel mode, wheel mode with legs up, walking mode.
+        These modes can be chosen by the user at the best needed moment.
+        <br/>The remote control system is made by bluetooth. Using the mobile app, you can easily control your robot.
+    </p>
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/5-30Ue-lCRw" allowfullscreen>
+        </iframe>
+    </div>
+    <hr/>
+    <h2>Future usage</h2>
+    <p>
+        You can use this robot at any terrains. In the place where there are many obstacles, like fire-fighting site, or construction site can be a pssible place to use ATOV.
+        If you change ATOV with bigger wheels and bigger legs, this robot will overcome bigger obstacles. If we put the camera at the front, You can seek places that you can not go through.
+        Just control this robot by watching the screen.
+    </p>
+    <hr/>
+    <h2>Future development</h2>
+    <p>Overcoming terrains is what ATOV have to develop. However, in order to acheive atuonomous robot, use of AI camera is essential.
+        Vision AI is needed if we try to make ATOV move autonomously move and think. This is our goal for the future.
+    </p>
+    <hr/>
+    <h2>Videos</h2>
+    <a href="https://youtu.be/5-30Ue-lCRw?si=qeD1ccOOYgEcCTcK">video</a></br>
+    </div>
+</body>
+</html>
