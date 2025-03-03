@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style type="text/css">
+        .robo{display:block; margin:0 auto; width:100px; margin-bottom:10px;}
         body{font-family:Arial, sans-serif; line-height:1.6; margin:0; padding:0; }
         .heading{display:flex; flex-direction:row;}
         .heading .discription {padding-left:50px;}
         .picture{max-width:100%; height: auto; border-radius:10px;}
         hr{margin:20px 0;}
-        h1{text-align:center;}
+        h1{text-align:center; margin-bottom:50px;background-color:black; color:white; border-radius:10px; font-size:50px;}
+        h2{background-color:lightpink;color:white;border-radius:10px;}
+        .discription{background-color:white;color:black;}
         @media (max-width: 768px) {
             .heading {
                 flex-direction: column;
@@ -28,9 +31,24 @@
             }
             
         }
+/*영상*/
+.video-container {
+    width: 90vw; /* 전체 너비의 90% */
+    max-width: 1200px; /* 최대 크기 제한 */
+    margin: 0 auto; /* 가운데 정렬 */
+}
+.video-container iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* 가로세로 비율 유지 */
+}
+
+
+
     </style>
 </head>
 <body>
+    <a href="index.html"><img src="IMG_0003.png" width="50" class="robo" ></a>
     <h1>ROUTE FINDER</h1>
     <div class="heading">
     <img src="IMG_9149.JPG" width="200" class="picture">
@@ -46,6 +64,10 @@
         If the obstacle is detected at the left sensor of the robot, the robot is programmed to turn right for 0.3miliseconds.
         If the obstacle is detected at the right sensor of the robot, the robot is programmed to turn left for 0.3miliseconds.
         This enables it to avoid the crash and go through the route.
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/Jc4xdx_2r-w?si=x5sAIqAFF_Tx5mL4" allowfullscreen>
+            </iframe>
+        </div>
     </p>
     <hr/>
     <h2>Future usage</h2>
@@ -56,12 +78,12 @@
     <h2>Future development</h2>
     <p>I'd like to add other moving methods in order to go through diverse terrains. There are limitations on wheel based moves.
         To solve this problem, adding legs or propellors can give the robot another option to move.
-        Also, adding camera can help collecting data and make more usabilities.
+        Also, adding camera can help collecting data and make more usabilities.  AI camera can identify the objects and do more actions.
     </p>
     <hr/>
     <h2>Videos</h2>
     <a href="https://www.youtube.com/shorts/Jc4xdx_2r-w?si=x5sAIqAFF_Tx5mL4">video</a></br>
     <a href="https://youtube.com/shorts/BtnDL3jlhKk?si=c18cRNXYNDzlPkQz">video2</a>
-    </div>
+    <hr/>
 </body>
 </html>
