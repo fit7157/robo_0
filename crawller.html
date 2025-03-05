@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .robo{display:block; margin:0 auto; width:100px; margin-bottom:10px;}
+        .subtitle{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:40px; text-align:center;font-style:italic; color:black; background-color:white;}       
+        body{font-family:Arial, sans-serif; line-height:1.6; margin:0; padding:0; }
+        .heading{display:flex; flex-direction:row; align-items:center; justify-content:center ;gap:20px;}
+        .heading .discription { display:flex; align-items:center; text-align:center; max-width:50%;}
+        .picture{max-width:100%; height: auto; border-radius:10px; margin-left:50px; margin-bottom:10px;}
+        hr{margin:20px 0;}
+        h1{text-align:center; background-color:black; color:white;border-radius:10px;font-size:50px;}
+        h2{background-color:rgba(192, 138, 138, 0.808);color:white; border-radius:10px;}
+        .discription {color:black; background-color:white;}
+        p{text-align:center;}
+        @media (max-width: 768px) {
+            .heading {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .heading .discription {
+                max-width:90%;
+                margin-top: 15px;
+                margin-left: 0;
+            }
+            .picture {
+                width: 80%;
+                max-width: 300px;
+                margin:0 auto;
+            }
+            
+        }
+
+/*영상*/
+.video-container {
+    width: 90vw; /* 전체 너비의 90% */
+    max-width: 1200px; /* 최대 크기 제한 */
+    margin: 0 auto; /* 가운데 정렬 */
+}
+.video-container iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* 가로세로 비율 유지 */
+}
+
+    </style>
+</head>
+
+<body>
+    <a href="index.html"><img src="IMG_0003.png" width="50" class="robo" ></a>
+    <h1>CRAWLLER</h1>
+    <h2 class="subtitle">How can we overcome terrains that wheels can not go through?</h2>
+    <div class="heading">
+    <img src="IMG_0001.jpg" width="200" class="picture">
+    <h2 class="discription">
+        This robot is basically crawlling the land.<br/>
+        The "crawlling" can be a unique way to move.</h2>
+    </div>
+    <hr/>
+    <div class="main">
+    <h2>How it works</h2>
+    <p> 
+        The two legs move like human legs. This method can make the robot move forward.<br/>
+        "Crawlling" is usefull when the robot have to go through low height places like cave or holes. It can also overcome uneven terrains by two legs.<br/>
+        The two legs have two motors each. one motor is located at the upper leg part and the other one is located at the knee part.<br/>
+        What matters is how the moverment can make the power to move. It is same as human movemnet. When the upper part of the leg is lifted, it bends its lowerpart of the leg.
+    <br/>When the upper part is lowered, the robot moves forward by the friction between the robot leg and floor.
+    <br/>This simple mechanism is repeated in left and right legs.
+    </p>
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/3H3qJykoQYY" allowfullscreen>
+        </iframe>
+    </div>
+    <p>This is what happens when the robot has three legs. There are 2 types of movement.
+        First movement is moving two legs at the side to front while middle leg remains still.
+        <br/>The second movement is two legs at each side are moving at the same time, while the other side leg remains still.
+        <br/>While these methods of moving are stable, they seem very slow.
+    </p>
+
+    <div class="video-container">
+        <iframe src="https://youtube.com/embed/MMY4J7ksMU4?si=I13x6RMz0RSjACWA" allowfullscreen>
+        </iframe>
+    </div>
+    <p >three-leg movement .1</p>
+    <div class="video-container">
+        <iframe src="https://youtube.com/embed/PRZTKbgWZp0?si=CotnOkpxesQLwn2_" allowfullscreen>
+        </iframe>
+    </div>
+    <p>three-leg movement .2</p>
+    
+    <hr/>
+    <h2>Future usage</h2>
+    <p>Because the robot moves in low stance, it can move in a stable condition.
+        This enables the robot to move in slopes. <br/> Slope can be overcomed by CRAWLLER thanksto its unique movement.
+        If there is a situation that a robot have to move over a slope, CRAWLLING can be effective.
+    </p>
+    <hr/>
+    <h2>Future development</h2>
+    <p>Development regarding the material of the CRAWLLER's foot can be important.
+        When we put magnetic material on the feet,<br/>
+        the robot can climb metal-made things like bridges or other infrastructures.
+        <br/>If we add sharp materials on the feet, it can climb on trees like cats.
+    </p>
+    <hr/>
+    <h2>Videos</h2>
+    <a href="https://www.youtube.com/shorts/Jc4xdx_2r-w?si=x5sAIqAFF_Tx5mL4">video</a></br>
+    <a href="https://youtube.com/shorts/MMY4J7ksMU4?si=I13x6RMz0RSjACWA">video2</a></br>
+    <a href="https://youtube.com/shorts/PRZTKbgWZp0?si=CotnOkpxesQLwn2_">video3</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,273 @@
+// L298N 모터 드라이버 제어 코드
+#define ENA 3    // 모터 A 속도 제어 (PWM)
+#define IN1 7    // 모터 A 방향 제어
+#define IN2 6
+#define ENB 2    // 모터 B 속도 제어 (PWM)
+#define IN3 5    // 모터 B 방향 제어
+#define IN4 4
+
+void setup() {
+  // 모터 제어 핀 설정
+  pinMode(ENA, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(ENB, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+
+  // 초기 상태: 모터 정지
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+}
+
+void loop() {
+  // 전진
+  analogWrite(ENA, 150); // 모터 A 속도 설정 (0~255)
+  analogWrite(ENB, 150); // 모터 B 속도 설정
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+  delay(3000);
+
+  // 후진
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+  delay(3000);
+
+  // 좌회전
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+  delay(3000);
+
+  // 우회전
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+  delay(3000);
+
+  // 정지
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+  delay(3000);
+}
+
+
+
+
+----------------------------------------------------------------------------------------------
+==========================================================
+
+
+//장애물 넘기
+
+
+#include <Wire.h>
+#include <Adafruit_PWMServoDriver.h>
+
+Adafruit_PWMServoDriver pca = Adafruit_PWMServoDriver();
+
+// 서보모터 최소/최대 펄스 값 (0도 ~ 180도)
+#define SERVOMIN  120
+#define SERVOMAX  620
+
+// 서보모터 각도 설정 함수
+void setServoAngle(uint8_t servo, int angle) {
+
+  int pulselen = map(angle, 0, 180, SERVOMIN, SERVOMAX);
+  pca.setPWM(servo, 0, pulselen);
+}
+
+//dc모터--------------------------------------------
+#define ENA 3    // 모터 A 속도 제어 (PWM)
+#define IN1 7    // 모터 A 방향 제어
+#define IN2 6
+#define ENB 2    // 모터 B 속도 제어 (PWM)
+#define IN3 5    // 모터 B 방향 제어
+#define IN4 4
+//-------------------------------------------------------------
+
+
+//초음파센서---------------------------------------------------
+const int trigPin = 8;
+const int echoPin = 9;
+--------------------------------------------------------------
+
+
+//설정
+void setup() {
+  Serial.begin(9600);
+  Serial.println("서보모터 초기화");
+
+  pca.begin();
+  pca.setPWMFreq(50);  // 서보모터 주파수 50Hz
+
+  // 초기 자세 설정
+  setServoAngle(0, 0);  // 모든 서보모터를 중립 위치로 설정
+  setServoAngle(1, 0);  // 모든 서보모터를 중립 위치로 설정
+  setServoAngle(2, 0);  // 모든 서보모터를 중립 위치로 설정
+  setServoAngle(3, 0);  // 모든 서보모터를 중립 위치로 설정
+
+  
+  delay(1000);  // 설정 후 대기
+
+//dc모터------------------------------------------
+  pinMode(ENA, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(ENB, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+
+  // 초기 상태: 모터 정지
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+  //-------------------------------------------------------
+
+  //초음파 센서-----------------------------------------------
+  pinMode(trigPin,OUTPUT);
+  pinMode(echoPin,INPUT);
+  //---------------------------------------------------------
+}
+
+
+void loop() {  
+
+  long duration = measureDistance();
+  float distance = duration*0.0343/2;
+  Serial.print("Distance: ");
+  Serial.print(distance);
+
+  if(distance<= 15)
+ {
+  stopMoter();
+  legdown();
+  moveForward();
+  delay(5000);
+  legup();
+ }
+ else
+ {
+  moveForward();
+ }
+ delay(100);
+
+
+
+}
+
+// 전진 동작 구현
+void walkForward() {
+
+
+/*
+//right
+setServoAngle(0,60);
+setServoAngle(1,90);
+delay(500);
+
+setServoAngle(0,30);
+setServoAngle(1,0);
+delay(1000);
+
+
+//left
+setServoAngle(2,60);
+setServoAngle(3,90);
+delay(500);
+
+setServoAngle(2,30);
+setServoAngle(3,0);
+delay(1000);
+*/
+
+/*기준
+setServoAngle(0,20);//right
+setServoAngle(1,0);
+setServoAngle(2,90);//left
+setServoAngle(3,90);
+delay(500);
+*/
+
+//right 들어올리기
+setServoAngle(0,80); //right
+setServoAngle(1,0);
+delay(500);
+//rigth 내리기
+setServoAngle(0,40);//right
+setServoAngle(1,30);
+//left 올리기
+setServoAngle(2,20); //left
+setServoAngle(3,90);
+delay(500);
+//left내리기
+setServoAngle(2,60);//left
+setServoAngle(3,60);
+
+}
+
+
+long measureDistance(){
+  digitalWrite(trigPin,LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin,LOW);
+
+  long duration =pulseIN(echoPin,HIGH);
+  return duration;
+}
+ 
+
+
+void moveForward(){
+//dc모터 전진------------------------------------------
+analogWrite(ENA, 150); // 모터 A 속도 설정 (0~255)
+analogWrite(ENB, 150); // 모터 B 속도 설정
+digitalWrite(IN1, HIGH);
+digitalWrite(IN2, LOW);
+digitalWrite(IN3, HIGH);
+digitalWrite(IN4, LOW);
+  //-------------------------------------------------------------
+}
+
+
+void stopMotor(){
+analogWrite(ENA, 150); // 모터 A 속도 설정 (0~255)
+analogWrite(ENB, 150); // 모터 B 속도 설정
+digitalWrite(IN1, LOW);
+digitalWrite(IN2, LOW);
+digitalWrite(IN3, LOW);
+digitalWrite(IN4, LOW);
+}
+
+
+
+void legdown(){
+
+//rigth,left 모두 내리기
+setServoAngle(0,40);//right
+setServoAngle(1,30);
+setServoAngle(2,60);//left
+setServoAngle(3,60);
+
+}
+
+
+void legup(){
+setServoAngle(0,80); //right
+setServoAngle(1,0);
+setServoAngle(2,20); //left
+setServoAngle(3,90);
+}

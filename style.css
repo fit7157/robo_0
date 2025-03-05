@@ -1,0 +1,5 @@
+.center-image {
+    display: block;
+    margin: 0 auto; /* 가로 중앙 정렬 */
+    width: 50%; /* 크기 조정 (원하는 값) */
+}

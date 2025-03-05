@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .heading {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .heading .robotics {
+            font-size: 5vw;  /* 화면 크기에 맞춰 자동 조정 */
+            color:white;
+            text-shadow:
+            -2px -2px 0 black,
+            2px -2px 0 black,
+            -2px 2px 0 black,
+            2px 2px 0 black;
+            border-style: solid;
+            margin-bottom: 10px;
+            background-color: rgb(196, 241, 242);
+            border-radius:15px;
+            border-width:10px;
+            border-color:rgb(147, 225, 225);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .heading .welcome {
+            font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
+            margin-top: 1px;
+            color: blue;
+        }
+        .routefinder, .scooter, .crawller, .atov {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            opacity:0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out; /*스크롤효과*/
+        }
+        /*스크롤 효과*/
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        .routefinder .dis1, .scooter .dis2 , .crawller .dis3, .atov .dis4{
+            display: flex;
+            flex-direction: column;
+            padding-left: 20px;
+        }
+        .routefinder .title1, .scooter .title2, .crawller .title3, .atov .title4{
+            font-size: 8vw;  /* 반응형으로 글씨 크기 조정 */
+            margin-bottom: 10px;
+            margin-top: 20px;
+            text-align:center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+                 "Helvetica Neue", Arial, sans-serif;
+            text-shadow: 3px 3px 5px gray;
+            
+        }
+        .discription1, .discription2, .discription3, .discription4{
+            padding-top: 5px;
+            background-color:rgb(193, 177, 207);
+            border-radius:10px;
+            text-align:center;
+            
+        }
+   
+        img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 100px;
+            transition: transform 0.3s ease;
+            border-style:solid;
+            border-width:10px;
+            border-color:rgb(184, 215, 184);
+            filter:drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+            -webkit-box-reflect: below 0px linear-gradient(to top, rgba(255, 255, 255, 0.105), transparent);
+        }
+        .scooter .title2{
+            font-size:6vw;
+        }
+
+        /*2,4번째 조정*/
+        .scooter , .atov { /*scooter,atov는 거꾸로*/
+            display:flex;
+            flex-direction:row-reverse;
+        }
+        .dis2, .dis4{
+            margin-right:120px;
+            width:100%;
+        }
+        .scooter img, .atov img{
+            max-width:90%;
+        }
+
+        /*하부*/
+        .channel .picture_fin{
+            max-width: 50%;
+            height:auto;
+            border-radius: 100px;
+            transition: transform 0.3s ease;
+            border-style:solid;
+            border-width:10px;
+        }
+
+        img:hover{
+            transform:scale(1.2);
+        }
+
+        /*하부이미지*/
+
+        .bottom_line{
+            border-top:3px solid black;
+            margin-top:200px;
+            display:flex;
+            flex-direction:row-reverse;
+        }
+
+        .picture_smp{
+            max-width: 100px;
+            height: auto;
+            border-radius: 100%;
+            transition: transform 0.3s ease;
+            border-style:none;
+            padding-top:5px;
+            margin-top:5px;
+        }
+        .picture_sju{
+            max-width: 80px;
+            height: auto;
+            border-radius: 100%;
+            transition: transform 0.3s ease;
+            border-style:none;
+            margin-top:5px;
+        }
+
+        .picture_smp :hover, .picture_sju :hover {
+            transform: scale(1.2);
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .routefinder, .scooter, .crawller, .atov{
+                flex-direction: column;
+                text-align: center;
+
+                /*스크롤효과*/
+                opacity: 1;
+                transform:none;
+            }
+            .routefinder .dis1, .scooter .dis2, .crawller .dis3, .atov .dis4 {
+                padding-left: 0;
+                margin-top: 15px;
+            }
+            .scooter .title2, .atov .title4{
+                margin-right: 0;
+            }
+            .routefinder img, .scooter img, .crawller img, .atov img{
+                width: 90%;
+                max-width: 400px;
+            }
+            .heading .robotics {
+                font-size: 8vw;  /* 모바일에서 글씨 크기 커지게 */
+            }
+            .scooter img, .atov img {
+        margin: 10px auto; /* 모바일에서는 중앙 정렬 */
+    }
+    
+    .dis2, .dis4 {
+        margin: 10px 0; /* 모바일에서 간격 추가 */
+    }
+        }
+       /*smp, sju 그림 반응형 디자인*/
+       @media (max-width: 768px) { /* 태블릿 및 모바일 */
+        .picture_smp, .picture_sju {
+        max-width: 80px; /* 작은 화면에서는 크기를 줄임 */
+         }
+        }
+
+       @media (max-width: 480px) { /* 모바일 화면 */
+        .picture_smp, .picture_sju {
+        max-width: 60px; /* 더 작은 화면에서는 더욱 줄임 */
+         }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1 class="robotics"> The ROBOTICS LAB</h1>
+        <h2 class="welcome">Welcome to the Robotics Lab</h2>
+    </div>
+    
+    
+    <div class="routefinder">
+        <a href="route_finder.html">
+            <img src="IMG_9149.JPG" class="picture1" alt="Route Finder Robot">
+        </a>
+        <div class="dis1">
+            <h3 class="title1">Route Finder</h3>
+            <h3 class="discription1">Finding pathes using 2-ultrasonic sensors</h3>
+        </div>
+    </div>
+    
+    
+    <div class="scooter">
+        <a href="scooter.html">
+            <img src="IMG_0267.jpg" class="picture2" alt="Scooter Safety Belt">
+        </a>
+        <div class="dis2">
+            <h3 class="title2">Scooter Safety Belt</h3>
+            <h3 class="discription2">This improves scooter safety.</h3>
+        </div>
+    </div>
+    
+    <div class="crawller">
+        <a href="crawller.html">
+            <img src="IMG_0001.jpg" class="picture3" alt="crawller" align:center;>
+        </a>
+        <div class="dis3">
+            <h3 class="title3">CRAWLLER</h3>
+            <h3 class="discription3">2 legs, 1 wheel movement.</h3>
+        </div>
+    </div>
+    <div class="atov">
+        <a href="atov.html">
+            <img src="IMG_0004.jpg" class="picture4" alt="atov" align="center";>
+        </a>
+        <div class="dis4">
+            <h3 class="title4">ATOV</h3>
+            <h3 class="discription4">Introducing the all-terrain robot with remote control.</h3>
+        </div>
+    </div>
+
+    
+    <div class ="bottom_line">
+        <a href="https://www.youtube.com/@smpictures1234">
+            <img src ="IMG_0002.png" class="picture_smp" alt="SMP">
+        </a>
+        <a href="https://en.sejong.ac.kr/eng/index.do">
+            <img src ="sju-log.png" class="picture_sju" alt="SJU">
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeElements = document.querySelectorAll(".routefinder, .scooter, .crawller, .atov");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("fade-in");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
