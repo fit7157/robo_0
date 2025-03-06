@@ -40,13 +40,13 @@
             display: flex;
             align-items: center;
             padding: 20px;
-            opacity:0;
+            opacity:0;/*기본 설정은 안보이게*/
             transform: translateY(50px);
             transition: opacity 1s ease-out, transform 1s ease-out; /*스크롤효과*/
         }
-        /*스크롤 효과*/
+        /*스크롤 효과  javascript에서 스크롤이 감지되면 이것을 불러온다다*/
         .fade-in {
-            opacity: 1 !important;
+            opacity: 1 !important;  
             transform: translateY(0) !important;
         }
         .routefinder .dis1, .scooter .dis2 , .crawller .dis3, .atov .dis4{
@@ -150,10 +150,9 @@
             .routefinder, .scooter, .crawller, .atov{
                 flex-direction: column;
                 text-align: center;
-
                 /*스크롤효과*/
-                opacity: 1;
-                transform:none;
+                opacity: 0;
+                transform:translateY(50px);
             }
             .routefinder .dis1, .scooter .dis2, .crawller .dis3, .atov .dis4 {
                 padding-left: 0;
@@ -170,18 +169,20 @@
                 font-size: 8vw;  /* 모바일에서 글씨 크기 커지게 */
             }
             .scooter img, .atov img {
-        margin: 10px auto; /* 모바일에서는 중앙 정렬 */
-    }
+               margin: 10px auto; /* 모바일에서는 중앙 정렬 */
+            }
     
-    .dis2, .dis4 {
-        margin: 10px 0; /* 모바일에서 간격 추가 */
-    }
-        }
+            .dis2, .dis4 {
+                margin: 10px 0; /* 모바일에서 간격 추가 */
+            }
+        
        /*smp, sju 그림 반응형 디자인*/
-       @media (max-width: 768px) { /* 태블릿 및 모바일 */
+       
+       /* 태블릿 및 모바일 */
         .picture_smp, .picture_sju {
         max-width: 80px; /* 작은 화면에서는 크기를 줄임 */
          }
+
         }
 
        @media (max-width: 480px) { /* 모바일 화면 */
@@ -257,10 +258,10 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("fade-in");
-                        observer.unobserve(entry.target);
+                        observer.unobserve(entry.target); // 한 번만 실행되도록 설정
                     }
                 });
-            }, { threshold: 0.2 });
+            }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }); // ✅ 모바일에서도 감지되도록 설정
 
             fadeElements.forEach(el => observer.observe(el));
         });
