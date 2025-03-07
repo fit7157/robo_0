@@ -25,10 +25,10 @@
             2px 2px 0 black;
             border-style: solid;
             margin-bottom: 10px;
-            background-color: rgb(196, 241, 242);
+            background-color: rgb(222, 222, 241);
             border-radius:15px;
             border-width:10px;
-            border-color:rgb(147, 225, 225);
+            border-color:rgb(190, 190, 232);
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
         }
         .heading .welcome {
@@ -43,6 +43,8 @@
             opacity:0;/*기본 설정은 안보이게*/
             transform: translateY(50px);
             transition: opacity 1s ease-out, transform 1s ease-out; /*스크롤효과*/
+            border-radius:15px;
+            margin-bottom:20px;
         }
         /*스크롤 효과  javascript에서 스크롤이 감지되면 이것을 불러온다다*/
         .fade-in {
@@ -185,12 +187,11 @@
 
         }
 
-       @media (max-width: 480px) { /* 모바일 화면 */
+       @media (max-width: 480px) { /* 더 작은 모바일 화면 */
         .picture_smp, .picture_sju {
         max-width: 60px; /* 더 작은 화면에서는 더욱 줄임 */
          }
         }
-
     </style>
 </head>
 <body>
