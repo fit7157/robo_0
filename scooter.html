@@ -6,7 +6,14 @@
     <title>Document</title>
     <link href="style.css" type="text/css" rel="stylesheet" />
     <style>
-        .robo{display:block; margin:0 auto; width:100px; margin-bottom:10px;}
+        .robo{display:block; margin:0 auto; width:100px; margin-bottom:10px; margin-top:20px;}
+        @media (max-width: 768px) 
+        {
+           .robo {
+            width: 60px; /* 기본 크기보다 줄이기 */
+            margin-bottom: 50px; /* 아래 여백도 줄이기 */
+               }
+        }
     </style>
 </head>
 

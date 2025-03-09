@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style type="text/css">
-        .robo{display:block; margin:0 auto; width:100px; margin-bottom:10px;}
+        .robo{display:block; margin:0 auto; width:100px; margin-bottom:10px; margin-top:20px;}
         body{font-family:Arial, sans-serif; line-height:1.6; margin:0; padding:0; }
         .heading{display:flex; flex-direction:row;}
         .heading .discription {padding-left:50px;}
@@ -13,8 +13,12 @@
         hr{margin:20px 0;}
         h1{text-align:center; margin-bottom:50px;background-color:rgba(192, 138, 138, 0.808); color:white; border-radius:10px; font-size:35px;}
         h2{background-color:rgba(192, 138, 138, 0.808);color:white;border-radius:10px;}
-        .discription{background-color:rgb(222, 222, 247);color:black; margin-left:10px;}
+        .discription{background-color:rgb(222, 222, 247);color:black; margin-left:10px; margin-right:10px;}
         @media (max-width: 768px) {
+            .robo {
+            width: 60px; /* 기본 크기보다 줄이기 */
+            margin-bottom: 50px; /* 아래 여백도 줄이기 */
+              }
             .heading {
                 flex-direction: column;
                 text-align: center;
@@ -23,6 +27,7 @@
             .heading .discription {
                 padding-left: 0;
                 margin-top: 15px;
+                margin-right:10px;
             }
             .picture {
                 width: 80%;

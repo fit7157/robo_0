@@ -10,31 +10,22 @@
             margin: 0;
             padding: 0;
         }
+        .picture0{
+            display:block; 
+            margin:0 auto; 
+            width:100px; 
+            margin-bottom:100px;
+            margin-top:20px;
+            border-style:none;
+            filter:none; /*그림자효과 제거*/
+            -webkit-box-reflect: none !important;  /*확대효과 제거*/
+            border-radius:0;
+        }
         .heading {
             display: flex;
             flex-direction: column;
-            text-align: center;
-        }
-        .heading .robotics {
-            font-size: 5vw;  /* 화면 크기에 맞춰 자동 조정 */
-            color:white;
-            text-shadow:
-            -2px -2px 0 black,
-            2px -2px 0 black,
-            -2px 2px 0 black,
-            2px 2px 0 black;
-            border-style: solid;
-            margin-bottom: 10px;
-            background-color: rgb(222, 222, 241);
-            border-radius:15px;
-            border-width:10px;
-            border-color:rgb(190, 190, 232);
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-        }
-        .heading .welcome {
-            font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
-            margin-top: 1px;
-            color: blue;
+            text-align: left;
+            text-shadow: 3px 3px 5px gray;
         }
         .routefinder, .scooter, .crawller, .atov {
             display: flex;
@@ -85,6 +76,7 @@
             filter:drop-shadow(0 10px 15px rgba(0,0,0,0.5));
             -webkit-box-reflect: below 0px linear-gradient(to top, rgba(255, 255, 255, 0.105), transparent);
         }
+
         .scooter .title2{
             font-size:6vw;
         }
@@ -133,7 +125,13 @@
             border-style:none;
             padding-top:5px;
             margin-top:5px;
+            filter:none; /*그림자효과 제거*/
+            -webkit-box-reflect: none; /*확대효과 제거*/
         }
+        /* hover 시 확대되지 않도록 */
+        .picture0, .picture_smp:hover, .picture_sju:hover {
+            transform: none;}
+
         .picture_sju{
             max-width: 80px;
             height: auto;
@@ -141,6 +139,8 @@
             transition: transform 0.3s ease;
             border-style:none;
             margin-top:5px;
+            filter:none; /*그림자효과 제거*/
+            -webkit-box-reflect: none; /*확대효과 제거*/
         }
 
         .picture_smp :hover, .picture_sju :hover {
@@ -149,6 +149,11 @@
 
         /* 반응형 디자인 */
         @media (max-width: 768px) {
+            .picture0 {
+            width: 80px; /* 기본 크기보다 줄이기 */
+            margin-bottom: 50px; /* 아래 여백도 줄이기 */
+              }
+
             .routefinder, .scooter, .crawller, .atov{
                 flex-direction: column;
                 text-align: center;
@@ -188,16 +193,22 @@
         }
 
        @media (max-width: 480px) { /* 더 작은 모바일 화면 */
+        .picture0 {
+        width: 60px; /* 더 작은 화면에서는 더욱 줄이기 */
+        margin-bottom: 30px; /* 여백 줄이기 */
+         }
         .picture_smp, .picture_sju {
         max-width: 60px; /* 더 작은 화면에서는 더욱 줄임 */
          }
+         
         }
     </style>
 </head>
 <body>
     <div class="heading">
-        <h1 class="robotics"> The ROBOTICS LAB</h1>
-        <h2 class="welcome">Welcome to the Robotics Lab</h2>
+        <a href="index.html">
+        <img src="IMG_0003.png" class="picture0" alt="logo">
+        </a>
     </div>
     
     

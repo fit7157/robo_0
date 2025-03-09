@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style type="text/css">
-        .robo{display:block; margin:0 auto; width:100px; margin-bottom:10px;}
+        .robo{display:block; margin:0 auto; width:100px; margin-bottom:10px; margin-top:20px;}
         .subtitle{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:40px; text-align:center;font-style:italic; color:black; background-color:white;}       
         body{font-family:Arial, sans-serif; line-height:1.6; margin:0; padding:0; }
         .heading{display:flex; flex-direction:row; align-items:center; justify-content:center ;gap:20px;}
@@ -17,6 +17,10 @@
         .discription {color:black; background-color:rgb(222, 222, 247);}
 
         @media (max-width: 768px) {
+            .robo {
+            width: 60px; /* 기본 크기보다 줄이기 */
+            margin-bottom: 50px; /* 아래 여백도 줄이기 */
+            }
             .heading {
                 flex-direction: column;
                 text-align: center;
