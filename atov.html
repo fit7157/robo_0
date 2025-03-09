@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style type="text/css">
-        .robo{display:block; margin:0 auto; width:100px; margin-bottom:10px; margin-top:20px;}
+        .robo{display:block; margin:0 auto; width:150px; margin-bottom:50px; margin-top:20px;}
         .subtitle{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:40px; text-align:center;font-style:italic; color:black; background-color:white;}       
         body{font-family:Arial, sans-serif; line-height:1.6; margin:0; padding:0; }
         .heading{display:flex; flex-direction:row; align-items:center; justify-content:center ;gap:20px;}
@@ -15,11 +15,15 @@
         h1{text-align:center; background-color:rgba(192, 138, 138, 0.808); color:white;border-radius:10px;font-size:35px;}
         h2{background-color:rgba(192, 138, 138, 0.808);color:white; border-radius:10px;}
         .discription {color:black; background-color:rgb(222, 222, 247);}
+        p{border-radius:15px; background-color:rgb(221, 227, 235);}
 
         @media (max-width: 768px) {
             .robo {
             width: 60px; /* 기본 크기보다 줄이기 */
             margin-bottom: 50px; /* 아래 여백도 줄이기 */
+               }
+            .subtitle{
+                font-size:30px;
             }
             .heading {
                 flex-direction: column;
@@ -27,6 +31,7 @@
             }
             
             .heading .discription {
+                font-size:20px;
                 max-width:90%;
                 margin-top: 15px;
                 margin-left: 0;
@@ -36,6 +41,8 @@
                 max-width: 300px;
                 margin:0 auto;
             }
+            h1{font-size:25px;}
+            h2{font-size:20px;}
             
         }
 
@@ -67,10 +74,10 @@
     <div class="main">
     <h2>How it works</h2>
     <p> 
-        There are 2 legs and 3wheels with 2motors. Wheels are fast,stable easy to change moving directions. However it can't overcome obstacles.
+        There are 2 legs and 3wheels with 2motors. Wheels are fast,stable and easy to change moving directions. However it can't overcome obstacles.
         Legs can overcome obstacles, but they are slow and unstable. Therefore lot's of companies are making robots that combine legs and wheels.
-        ATOV is one of them that combine wheel movement and leg movement. However unlike other robots, ATOV can choose whether to move by legs or wheels.<br/>
-        This enables the robot to efficiently move and maximize the stability. Three modes are possible, the wheel mode, wheel mode with legs up, walking mode.
+        ATOV is one of them. However unlike other robots, ATOV can choose whether to move by legs or wheels.<br/>
+        This enables the robot to efficiently move and maximize the stability. Three modes are possible, the wheel mode, wheel mode with legs up and walking mode.
         These modes can be chosen by the user at the best needed moment.
         <br/>The remote control system is made by bluetooth. Using the mobile app, you can easily control your robot.
     </p>
@@ -81,13 +88,13 @@
     <hr/>
     <h2>Future usage</h2>
     <p>
-        You can use this robot at any terrains. In the place where there are many obstacles, like fire-fighting site, or construction site can be a pssible place to use ATOV.
+        You can use this robot at any terrains. In the place where there are many obstacles, like fire-fighting site, or construction site can be a place to use ATOV.
         If you change ATOV with bigger wheels and bigger legs, this robot will overcome bigger obstacles. If we put the camera at the front, You can seek places that you can not go through.
         Just control this robot by watching the screen.
     </p>
     <hr/>
     <h2>Future development</h2>
-    <p>Overcoming terrains is what ATOV have to develop. However, in order to acheive atuonomous robot, use of AI camera is essential.
+    <p>Overcoming terrains is what ATOV has to develop. However, in order to acheive atuonomous robot, use of AI camera is essential.
         Vision AI is needed if we try to make ATOV move autonomously move and think. This is our goal for the future.
     </p>
     <hr/>

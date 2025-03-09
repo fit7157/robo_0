@@ -5,36 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style type="text/css">
-        .robo{display:block; margin:0 auto; width:100px; margin-bottom:10px; margin-top:20px;}
+        .robo{display:block; margin:0 auto; width:150px; margin-bottom:50px; margin-top:20px;}
+        .subtitle{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:40px; text-align:center;font-style:italic; color:black; background-color:white;}
         body{font-family:Arial, sans-serif; line-height:1.6; margin:0; padding:0; }
         .heading{display:flex; flex-direction:row;}
-        .heading .discription {padding-left:50px;}
+        .discription{text-align:center;}
         .picture{max-width:100%; height: auto; border-radius:10px;}
         hr{margin:20px 0;}
         h1{text-align:center; margin-bottom:50px;background-color:rgba(192, 138, 138, 0.808); color:white; border-radius:10px; font-size:35px;}
         h2{background-color:rgba(192, 138, 138, 0.808);color:white;border-radius:10px;}
         .discription{background-color:rgb(222, 222, 247);color:black; margin-left:10px; margin-right:10px;}
+        p{background-color:rgb(216, 230, 230); border-radius:15px;}
         @media (max-width: 768px) {
             .robo {
             width: 60px; /* 기본 크기보다 줄이기 */
             margin-bottom: 50px; /* 아래 여백도 줄이기 */
-              }
+               }
+            .subtitle{
+                font-size:30px;
+            }
             .heading {
                 flex-direction: column;
                 text-align: center;
             }
             
             .heading .discription {
-                padding-left: 0;
-                margin-top: 15px;
-                margin-right:10px;
+                font-size:20px;
+                max-width:90%;
+                margin-top: 20px;
+                text-align:center;
+                margin: 0 auto; /*좌우 중앙 정렬 */
             }
             .picture {
                 width: 80%;
                 max-width: 300px;
                 margin:0 auto;
+                margin-bottom:10px;
             }
-            
+            h1{font-size:25px;}
+            h2{font-size:20px;}
         }
 /*영상*/
 .video-container {
@@ -55,20 +64,22 @@
 <body>
     <a href="index.html"><img src="IMG_0003.png" width="50" class="robo" ></a>
     <h1>ROUTE FINDER</h1>
+    <h2 class="subtitle">How can we make autonomous driving using ultra-sonic sensors?</h2>
     <div class="heading">
     <img src="IMG_9149.JPG" width="200" class="picture">
     <h2 class="discription">This robot recognizes the obstacle around through ultra sonic sensor.
-        This helps the robot know whether there are obstacles around and prevent the clash. It can find a route to go through autonomously.
+        How can we maximize the use of ultra-sonic sensors?
     </h2>
     </div>
     <hr/>
     <div class="main">
     <h2>How it works</h2>
-    <p>This is a robot that can go through maze. The route has only one way and this robot can go through the way without collapsing.
+    <p>This is a robot that can go through maze.This robot can find the way without collapsing by detecting obstacles and changing directions.
         This can be done by two radar sensors that is attatched at the side of the robot. The sensors are distinguished by the direction.
         If the obstacle is detected at the left sensor of the robot, the robot is programmed to turn right for 0.3miliseconds.
         If the obstacle is detected at the right sensor of the robot, the robot is programmed to turn left for 0.3miliseconds.
         This enables it to avoid the crash and go through the route.
+        In addition, in order to avoid infinite loop, it is programmed to turn opposite direction when it repeats turning same direction for several times.
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/Jc4xdx_2r-w?si=x5sAIqAFF_Tx5mL4" allowfullscreen>
             </iframe>
@@ -83,7 +94,7 @@
     <h2>Future development</h2>
     <p>I'd like to add other moving methods in order to go through diverse terrains. There are limitations on wheel based moves.
         To solve this problem, adding legs or propellors can give the robot another option to move.
-        Also, adding camera can help collecting data and make more usabilities.  AI camera can identify the objects and do more actions.
+        Also, adding camera can help collect data and make more usabilities.  AI camera can identify the objects and do more actions.
     </p>
     <hr/>
     <h2>Videos</h2>
